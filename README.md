@@ -1,14 +1,15 @@
 # Cdc_MySQL_to_KAFKA
-This repository contains implementations of both single-node and multi-node setups for Apache Kafka, managed by Zookeeper, and also  with integration with Airbyte for data ingestion. The project demonstrates the use of Python for data streaming and processing.
+- This repository contains implementations of both single-node and multi-node setups for Apache Kafka, managed by Zookeeper, and also  with integration with Airbyte for data ingestion. The project demonstrates the use of Python for data streaming and processing. Please refer the document I have attached there you can have the youtube links to setup enviroments as well as links of other documents.
 
-Overview
+## Overview
 The project includes:
 
 A single-node Kafka and zookeeper 
 A three-node Kafka cluster utilizing Zookeeper.
 Integration with Airbyte for easy data ingestion from various sources.
 Python scripts for data processing and interaction with Kafka.
-Architecture
+
+## Architecture
 The architecture consists of:
 
 Zookeeper: Manages Kafka brokers and maintains metadata.
@@ -21,7 +22,8 @@ Zookeeper: Version 3.x or higher
 Python: Version 3.7 or higher
 Airbyte: Version 0.x
 Docker (optional): For setting up Kafka and Zookeeper
-Installation
+
+## Installation
 To set up the project, please follow these steps:
 
 1. Prerequisites
@@ -43,8 +45,8 @@ pymysqlreplication
 pymysql
 You can install these libraries using:
 
-bash
-Copy code
+commands:
+
 pip install PyMySQL
 pip install pymysqlreplication
 pip install confluent-kafka
@@ -64,6 +66,7 @@ For single-node instructions, check the single_node_kafka_and_zookeeper director
 Navigate to the project directory and install the necessary Python packages using your preferred package manager.
 4. Set Up Airbyte:
 Refer to the airbyte directory for installation and configuration details.
-Usage
-To run the single-node Kafka setup, execute the appropriate Python script.
-For the multi-node Kafka setup, navigate to the relevant directory and follow the instructions provided in the README files within.
+
+## Usage
+To run the single-node Kafka setup, execute the appropriate Python script
+For the multi-node Kafka setup, navigate to the relevant directory and follow the instructions provide in documents
