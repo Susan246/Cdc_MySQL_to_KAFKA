@@ -1,0 +1,232 @@
+2024-10-03 12:59:23,066 - INFO - MySQL server localhost:3308 is healthy.
+2024-10-03 12:59:23,753 - INFO - Kafka producer initialized successfully.
+2024-10-03 12:59:28,907 - INFO - Kafka broker localhost:9092 is healthy.
+2024-10-03 12:59:28,916 - INFO - Zookeeper server localhost:2181 is healthy.
+2024-10-03 12:59:28,916 - INFO - System's health check successful.
+2024-10-03 12:59:30,760 - INFO - Successfully read binlog from file 'binlog.000008' at position '4'.
+2024-10-03 13:00:44,554 - INFO - Topic 'TestDatabase.TestTable' is created.
+2024-10-03 13:00:44,557 - INFO - DATABASE: TestDatabase TABLE: TestTable  >>  QUERY: create table TestTable (id int,name varchar(25))
+2024-10-03 13:00:48,295 - INFO - Kafka broker localhost:9092 is healthy.
+2024-10-03 13:00:48,859 - INFO - Message: {"type": "QUERY", "database": "TestDatabase", "table": "TestTable", "query": "create table TestTable (id int,name varchar(25))"} is successfully produced to topic 'TestDatabase.TestTable'.
+2024-10-03 13:00:48,860 - INFO - Checkpoint saved: log_file='binlog.000008', log_pos=595
+2024-10-03 13:01:18,819 - INFO - Topic 'TestDatabase.TestTable' already exists.
+2024-10-03 13:01:18,820 - INFO - DATABASE: TestDatabase TABLE: TestTable  >>  QUERY: insert into TestTable values(1,'susan')
+2024-10-03 13:01:23,779 - INFO - Kafka broker localhost:9092 is healthy.
+2024-10-03 13:01:23,785 - INFO - Message: {"type": "QUERY", "database": "TestDatabase", "table": "TestTable", "query": "insert into TestTable values(1,'susan')"} is successfully produced to topic 'TestDatabase.TestTable'.
+2024-10-03 13:01:23,785 - INFO - Checkpoint saved: log_file='binlog.000008', log_pos=904
+2024-10-03 13:03:26,071 - INFO - Topic 'TestDatabase.TestTable' already exists.
+2024-10-03 13:03:26,072 - INFO - DATABASE: TestDatabase TABLE: TestTable  >>  QUERY: insert into TestTable values(2,'abib')
+2024-10-03 13:03:30,017 - INFO - Kafka broker localhost:9092 is healthy.
+2024-10-03 13:03:30,019 - INFO - Message: {"type": "QUERY", "database": "TestDatabase", "table": "TestTable", "query": "insert into TestTable values(2,'abib')"} is successfully produced to topic 'TestDatabase.TestTable'.
+2024-10-03 13:03:30,020 - INFO - Checkpoint saved: log_file='binlog.000008', log_pos=1243
+2024-10-03 13:03:48,832 - INFO - Topic 'TestDatabase.TestTable' already exists.
+2024-10-03 13:03:48,833 - INFO - DATABASE: TestDatabase TABLE: TestTable  >>  QUERY: delete from TestTable where id =1
+2024-10-03 13:03:53,206 - INFO - Kafka broker localhost:9092 is healthy.
+2024-10-03 13:03:53,208 - INFO - Message: {"type": "QUERY", "database": "TestDatabase", "table": "TestTable", "query": "delete from TestTable where id =1"} is successfully produced to topic 'TestDatabase.TestTable'.
+2024-10-03 13:03:53,209 - INFO - Checkpoint saved: log_file='binlog.000008', log_pos=1577
+2024-10-03 13:04:31,609 - INFO - Topic 'TestDatabase.TestTable' already exists.
+2024-10-03 13:04:31,610 - INFO - DATABASE: TestDatabase TABLE: TestTable  >>  QUERY: update TestTable set name='anita' where id=2
+2024-10-03 13:04:35,025 - INFO - Kafka broker localhost:9092 is healthy.
+2024-10-03 13:04:35,028 - INFO - Message: {"type": "QUERY", "database": "TestDatabase", "table": "TestTable", "query": "update TestTable set name='anita' where id=2"} is successfully produced to topic 'TestDatabase.TestTable'.
+2024-10-03 13:04:35,029 - INFO - Checkpoint saved: log_file='binlog.000008', log_pos=1940
+2024-10-03 13:59:29,028 - INFO - MySQL server localhost:3308 is healthy.
+2024-10-03 13:59:32,738 - ERROR - Attempt 1: Kafka check failed for broker localhost:9092: [2024-10-03 13:59:32,057] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:32,058] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:32,153] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:32,153] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:32,254] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:32,255] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:32,355] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:32,355] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+Exception in thread "main" java.lang.RuntimeException: Request METADATA failed on brokers List(localhost:9092 (id: -1 rack: null))
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.sendAnyNode(BrokerApiVersionsCommand.scala:160)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.findAllBrokers(BrokerApiVersionsCommand.scala:183)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.awaitBrokers(BrokerApiVersionsCommand.scala:175)
+	at kafka.admin.BrokerApiVersionsCommand$.execute(BrokerApiVersionsCommand.scala:61)
+	at kafka.admin.BrokerApiVersionsCommand$.main(BrokerApiVersionsCommand.scala:55)
+	at kafka.admin.BrokerApiVersionsCommand.main(BrokerApiVersionsCommand.scala)
+
+2024-10-03 13:59:32,738 - WARNING - Kafka broker localhost:9092 is still down. Retrying in 10 seconds... (Attempt 2/5)
+2024-10-03 13:59:46,130 - ERROR - Attempt 2: Kafka check failed for broker localhost:9092: [2024-10-03 13:59:45,421] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:45,422] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:45,517] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:45,517] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:45,618] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:45,618] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:45,720] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:45,720] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+Exception in thread "main" java.lang.RuntimeException: Request METADATA failed on brokers List(localhost:9092 (id: -1 rack: null))
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.sendAnyNode(BrokerApiVersionsCommand.scala:160)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.findAllBrokers(BrokerApiVersionsCommand.scala:183)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.awaitBrokers(BrokerApiVersionsCommand.scala:175)
+	at kafka.admin.BrokerApiVersionsCommand$.execute(BrokerApiVersionsCommand.scala:61)
+	at kafka.admin.BrokerApiVersionsCommand$.main(BrokerApiVersionsCommand.scala:55)
+	at kafka.admin.BrokerApiVersionsCommand.main(BrokerApiVersionsCommand.scala)
+
+2024-10-03 13:59:46,130 - WARNING - Kafka broker localhost:9092 is still down. Retrying in 10 seconds... (Attempt 3/5)
+2024-10-03 13:59:59,728 - ERROR - Attempt 3: Kafka check failed for broker localhost:9092: [2024-10-03 13:59:59,023] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:59,025] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:59,118] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:59,118] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:59,220] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:59,220] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:59,322] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 13:59:59,322] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+Exception in thread "main" java.lang.RuntimeException: Request METADATA failed on brokers List(localhost:9092 (id: -1 rack: null))
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.sendAnyNode(BrokerApiVersionsCommand.scala:160)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.findAllBrokers(BrokerApiVersionsCommand.scala:183)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.awaitBrokers(BrokerApiVersionsCommand.scala:175)
+	at kafka.admin.BrokerApiVersionsCommand$.execute(BrokerApiVersionsCommand.scala:61)
+	at kafka.admin.BrokerApiVersionsCommand$.main(BrokerApiVersionsCommand.scala:55)
+	at kafka.admin.BrokerApiVersionsCommand.main(BrokerApiVersionsCommand.scala)
+
+2024-10-03 13:59:59,728 - WARNING - Kafka broker localhost:9092 is still down. Retrying in 10 seconds... (Attempt 4/5)
+2024-10-03 14:00:13,131 - ERROR - Attempt 4: Kafka check failed for broker localhost:9092: [2024-10-03 14:00:12,446] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 14:00:12,447] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 14:00:12,542] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 14:00:12,542] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 14:00:12,644] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 14:00:12,644] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 14:00:12,745] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 14:00:12,746] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+Exception in thread "main" java.lang.RuntimeException: Request METADATA failed on brokers List(localhost:9092 (id: -1 rack: null))
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.sendAnyNode(BrokerApiVersionsCommand.scala:160)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.findAllBrokers(BrokerApiVersionsCommand.scala:183)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.awaitBrokers(BrokerApiVersionsCommand.scala:175)
+	at kafka.admin.BrokerApiVersionsCommand$.execute(BrokerApiVersionsCommand.scala:61)
+	at kafka.admin.BrokerApiVersionsCommand$.main(BrokerApiVersionsCommand.scala:55)
+	at kafka.admin.BrokerApiVersionsCommand.main(BrokerApiVersionsCommand.scala)
+
+2024-10-03 14:00:13,131 - WARNING - Kafka broker localhost:9092 is still down. Retrying in 10 seconds... (Attempt 5/5)
+2024-10-03 14:00:26,440 - ERROR - Attempt 5: Kafka check failed for broker localhost:9092: [2024-10-03 14:00:25,738] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 14:00:25,739] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 14:00:25,834] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 14:00:25,834] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 14:00:25,935] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 14:00:25,935] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 14:00:26,037] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 14:00:26,037] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+Exception in thread "main" java.lang.RuntimeException: Request METADATA failed on brokers List(localhost:9092 (id: -1 rack: null))
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.sendAnyNode(BrokerApiVersionsCommand.scala:160)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.findAllBrokers(BrokerApiVersionsCommand.scala:183)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.awaitBrokers(BrokerApiVersionsCommand.scala:175)
+	at kafka.admin.BrokerApiVersionsCommand$.execute(BrokerApiVersionsCommand.scala:61)
+	at kafka.admin.BrokerApiVersionsCommand$.main(BrokerApiVersionsCommand.scala:55)
+	at kafka.admin.BrokerApiVersionsCommand.main(BrokerApiVersionsCommand.scala)
+
+2024-10-03 14:00:29,823 - INFO - Alert email sent successfully.
+2024-10-03 14:00:30,078 - CRITICAL - Kafka broker localhost:9092 is down after 5 retries.
+2024-10-03 14:00:30,078 - ERROR - Attempt 1: Zookeeper check failed for server localhost:2181: [Errno 111] Connection refused
+2024-10-03 14:00:30,079 - WARNING - Zookeeper server localhost:2181 is still down. Retrying in 10 seconds... (Attempt 2/5)
+2024-10-03 14:00:40,088 - ERROR - Attempt 2: Zookeeper check failed for server localhost:2181: [Errno 111] Connection refused
+2024-10-03 14:00:40,088 - WARNING - Zookeeper server localhost:2181 is still down. Retrying in 10 seconds... (Attempt 3/5)
+2024-10-03 14:00:50,098 - ERROR - Attempt 3: Zookeeper check failed for server localhost:2181: [Errno 111] Connection refused
+2024-10-03 14:00:50,098 - WARNING - Zookeeper server localhost:2181 is still down. Retrying in 10 seconds... (Attempt 4/5)
+2024-10-03 14:01:00,108 - ERROR - Attempt 4: Zookeeper check failed for server localhost:2181: [Errno 111] Connection refused
+2024-10-03 14:01:00,108 - WARNING - Zookeeper server localhost:2181 is still down. Retrying in 10 seconds... (Attempt 5/5)
+2024-10-03 14:01:10,118 - ERROR - Attempt 5: Zookeeper check failed for server localhost:2181: [Errno 111] Connection refused
+2024-10-03 14:01:13,253 - INFO - Alert email sent successfully.
+2024-10-03 14:01:13,505 - CRITICAL - Zookeeper server localhost:2181 is down after 5 retries.
+2024-10-03 14:01:13,505 - ERROR - System monitoring failed: One or more services are down.
+2024-10-03 16:13:38,409 - INFO - MySQL server localhost:3308 is healthy.
+2024-10-03 16:13:42,993 - ERROR - Attempt 1: Kafka check failed for broker localhost:9092: [2024-10-03 16:13:42,232] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:13:42,233] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:13:42,326] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:13:42,326] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:13:42,428] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:13:42,428] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:13:42,528] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:13:42,528] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:13:42,629] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:13:42,629] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+Exception in thread "main" java.lang.RuntimeException: Request METADATA failed on brokers List(localhost:9092 (id: -1 rack: null))
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.sendAnyNode(BrokerApiVersionsCommand.scala:160)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.findAllBrokers(BrokerApiVersionsCommand.scala:183)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.awaitBrokers(BrokerApiVersionsCommand.scala:175)
+	at kafka.admin.BrokerApiVersionsCommand$.execute(BrokerApiVersionsCommand.scala:61)
+	at kafka.admin.BrokerApiVersionsCommand$.main(BrokerApiVersionsCommand.scala:55)
+	at kafka.admin.BrokerApiVersionsCommand.main(BrokerApiVersionsCommand.scala)
+
+2024-10-03 16:13:42,993 - WARNING - Kafka broker localhost:9092 is still down. Retrying in 10 seconds... (Attempt 2/5)
+2024-10-03 16:13:56,700 - ERROR - Attempt 2: Kafka check failed for broker localhost:9092: [2024-10-03 16:13:55,997] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:13:55,999] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:13:56,091] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:13:56,091] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:13:56,193] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:13:56,193] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:13:56,294] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:13:56,294] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+Exception in thread "main" java.lang.RuntimeException: Request METADATA failed on brokers List(localhost:9092 (id: -1 rack: null))
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.sendAnyNode(BrokerApiVersionsCommand.scala:160)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.findAllBrokers(BrokerApiVersionsCommand.scala:183)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.awaitBrokers(BrokerApiVersionsCommand.scala:175)
+	at kafka.admin.BrokerApiVersionsCommand$.execute(BrokerApiVersionsCommand.scala:61)
+	at kafka.admin.BrokerApiVersionsCommand$.main(BrokerApiVersionsCommand.scala:55)
+	at kafka.admin.BrokerApiVersionsCommand.main(BrokerApiVersionsCommand.scala)
+
+2024-10-03 16:13:57,038 - WARNING - Kafka broker localhost:9092 is still down. Retrying in 10 seconds... (Attempt 3/5)
+2024-10-03 16:14:10,583 - ERROR - Attempt 3: Kafka check failed for broker localhost:9092: [2024-10-03 16:14:09,877] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:09,881] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:09,973] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:09,973] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:10,075] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:10,075] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:10,175] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:10,175] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+Exception in thread "main" java.lang.RuntimeException: Request METADATA failed on brokers List(localhost:9092 (id: -1 rack: null))
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.sendAnyNode(BrokerApiVersionsCommand.scala:160)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.findAllBrokers(BrokerApiVersionsCommand.scala:183)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.awaitBrokers(BrokerApiVersionsCommand.scala:175)
+	at kafka.admin.BrokerApiVersionsCommand$.execute(BrokerApiVersionsCommand.scala:61)
+	at kafka.admin.BrokerApiVersionsCommand$.main(BrokerApiVersionsCommand.scala:55)
+	at kafka.admin.BrokerApiVersionsCommand.main(BrokerApiVersionsCommand.scala)
+
+2024-10-03 16:14:10,584 - WARNING - Kafka broker localhost:9092 is still down. Retrying in 10 seconds... (Attempt 4/5)
+2024-10-03 16:14:24,147 - ERROR - Attempt 4: Kafka check failed for broker localhost:9092: [2024-10-03 16:14:23,442] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:23,443] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:23,536] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:23,536] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:23,637] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:23,637] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:23,739] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:23,739] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+Exception in thread "main" java.lang.RuntimeException: Request METADATA failed on brokers List(localhost:9092 (id: -1 rack: null))
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.sendAnyNode(BrokerApiVersionsCommand.scala:160)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.findAllBrokers(BrokerApiVersionsCommand.scala:183)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.awaitBrokers(BrokerApiVersionsCommand.scala:175)
+	at kafka.admin.BrokerApiVersionsCommand$.execute(BrokerApiVersionsCommand.scala:61)
+	at kafka.admin.BrokerApiVersionsCommand$.main(BrokerApiVersionsCommand.scala:55)
+	at kafka.admin.BrokerApiVersionsCommand.main(BrokerApiVersionsCommand.scala)
+
+2024-10-03 16:14:24,147 - WARNING - Kafka broker localhost:9092 is still down. Retrying in 10 seconds... (Attempt 5/5)
+2024-10-03 16:14:37,631 - ERROR - Attempt 5: Kafka check failed for broker localhost:9092: [2024-10-03 16:14:36,934] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:36,936] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:37,027] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:37,027] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:37,129] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:37,129] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:37,231] WARN [LegacyAdminClient clientId=admin-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[2024-10-03 16:14:37,231] WARN [LegacyAdminClient clientId=admin-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected (org.apache.kafka.clients.NetworkClient)
+Exception in thread "main" java.lang.RuntimeException: Request METADATA failed on brokers List(localhost:9092 (id: -1 rack: null))
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.sendAnyNode(BrokerApiVersionsCommand.scala:160)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.findAllBrokers(BrokerApiVersionsCommand.scala:183)
+	at kafka.admin.BrokerApiVersionsCommand$AdminClient.awaitBrokers(BrokerApiVersionsCommand.scala:175)
+	at kafka.admin.BrokerApiVersionsCommand$.execute(BrokerApiVersionsCommand.scala:61)
+	at kafka.admin.BrokerApiVersionsCommand$.main(BrokerApiVersionsCommand.scala:55)
+	at kafka.admin.BrokerApiVersionsCommand.main(BrokerApiVersionsCommand.scala)
+
+2024-10-03 16:14:41,387 - INFO - Alert email sent successfully.
+2024-10-03 16:14:41,641 - CRITICAL - Kafka broker localhost:9092 is down after 5 retries.
+2024-10-03 16:14:41,641 - ERROR - Attempt 1: Zookeeper check failed for server localhost:2181: [Errno 111] Connection refused
+2024-10-03 16:14:41,642 - WARNING - Zookeeper server localhost:2181 is still down. Retrying in 10 seconds... (Attempt 2/5)
+2024-10-03 16:14:51,652 - ERROR - Attempt 2: Zookeeper check failed for server localhost:2181: [Errno 111] Connection refused
+2024-10-03 16:14:51,652 - WARNING - Zookeeper server localhost:2181 is still down. Retrying in 10 seconds... (Attempt 3/5)
+2024-10-03 16:15:01,662 - ERROR - Attempt 3: Zookeeper check failed for server localhost:2181: [Errno 111] Connection refused
+2024-10-03 16:15:01,662 - WARNING - Zookeeper server localhost:2181 is still down. Retrying in 10 seconds... (Attempt 4/5)
+2024-10-03 16:15:11,672 - ERROR - Attempt 4: Zookeeper check failed for server localhost:2181: [Errno 111] Connection refused
+2024-10-03 16:15:11,672 - WARNING - Zookeeper server localhost:2181 is still down. Retrying in 10 seconds... (Attempt 5/5)
+2024-10-03 16:15:21,682 - ERROR - Attempt 5: Zookeeper check failed for server localhost:2181: [Errno 111] Connection refused
+2024-10-03 16:15:25,097 - INFO - Alert email sent successfully.
+2024-10-03 16:15:25,351 - CRITICAL - Zookeeper server localhost:2181 is down after 5 retries.
+2024-10-03 16:15:25,351 - ERROR - System monitoring failed: One or more services are down.
+2024-10-03 21:05:36,615 - INFO - Completed three checks for each hour.
