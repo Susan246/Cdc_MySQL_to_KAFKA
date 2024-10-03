@@ -1,10 +1,10 @@
 # Cdc_MySQL_to_KAFKA
-This repository contains implementations of both single-node and multi-node setups for Apache Kafka, managed by Zookeeper, along with integration with Airbyte for data ingestion. The project demonstrates the use of Python for data streaming and processing.
+This repository contains implementations of both single-node and multi-node setups for Apache Kafka, managed by Zookeeper, and also  with integration with Airbyte for data ingestion. The project demonstrates the use of Python for data streaming and processing.
 
 Overview
 The project includes:
 
-A single-node Kafka setup.
+A single-node Kafka and zookeeper 
 A three-node Kafka cluster utilizing Zookeeper.
 Integration with Airbyte for easy data ingestion from various sources.
 Python scripts for data processing and interaction with Kafka.
